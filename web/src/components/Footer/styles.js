@@ -11,6 +11,8 @@ export const Container = styled.div`
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
   color: #fff;
+  left: 0;
+  bottom: 0;
 
   img {
     height: 45px;

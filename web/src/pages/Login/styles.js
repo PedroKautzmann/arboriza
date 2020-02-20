@@ -9,6 +9,9 @@ export const Container = styled.div`
   width: 100%;
   /* max-width: 315px; */
   margin-top: 20px;
+  flex: 1;
+  height: 490px;
+  max-height: 100%;
 
   p {
     font-size: 24px;

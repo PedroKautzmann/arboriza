@@ -8,14 +8,20 @@ const options = [
 ];
 
 const customStyles = {
+  // menu: styles => ({
+  //   ...styles,
+  //   backgroundColor: '#000'
+  // }),
   control: styles => ({
     ...styles,
     backgroundColor: '#eee',
     height: 40,
     textAlign: 'center',
     alignItems: 'center',
+    justifyContent: 'center',
     marginBottom: 10,
-    border: '1px solid #eee'
+    border: '1px solid #eee',
+    padding: 0
   }),
   option: (styles, { data, isDisabled, isFocused, isSelected }) => {
     return {

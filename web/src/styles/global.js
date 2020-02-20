@@ -29,6 +29,7 @@ export default createGlobalStyle`
     /* max-width: 1020px; */
     margin: 0 auto;
     /* padding: 0 20px 0; */
+    height: 100%;
   }
 
   button {
