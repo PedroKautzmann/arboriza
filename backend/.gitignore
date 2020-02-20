@@ -1,2 +1,4 @@
 node_modules/
-temp/uploads/
+temp/uploads/*jpg
+temp/uploads/*jpeg
+temp/uploads/*png
