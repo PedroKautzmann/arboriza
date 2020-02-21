@@ -11,15 +11,38 @@ class TreeController {
      * Se não tiver, deixo ela como 0
      * Se tiver, pego o valor de req.query
      */
-    const { recommended = 0, forbidden = 0, wireless, wired } = req.query;
+    const {
+      recommended = 0,
+      forbidden = 0,
+      wireless,
+      wired,
+      quadrant
+    } = req.query;
 
-    if (wired || wireless) {
-      const { wired: newWired = 0, wireless: newWireless = 0 } = req.query;
+    if (forbidden == 1) {
+      const trees = await Tree.findAll({
+        where: {
+          forbidden: 1
+        },
+        attributes: ['id', 'name', 'species', 'avatar_id'],
+        include: [
+          {
+            model: File,
+            as: 'avatar',
+            attributes: ['name', 'path', 'url']
+          }
+        ]
+      });
+
+      return res.json(trees);
+    }
+
+    if (quadrant) {
+      const { quadrant: newQuadrant = 0 } = req.query;
 
       const trees = await Tree.findAll({
         where: {
-          wireless: newWireless,
-          wired: newWired,
+          quadrant: newQuadrant,
           forbidden: 0
         },
         attributes: ['id', 'name', 'species', 'avatar_id'],
@@ -35,10 +58,14 @@ class TreeController {
       return res.json(trees);
     }
 
-    if (forbidden == 1) {
+    if (wired || wireless) {
+      const { wired: newWired = 0, wireless: newWireless = 0 } = req.query;
+
       const trees = await Tree.findAll({
         where: {
-          forbidden: 1
+          wireless: newWireless,
+          wired: newWired,
+          forbidden: 0
         },
         attributes: ['id', 'name', 'species', 'avatar_id'],
         include: [

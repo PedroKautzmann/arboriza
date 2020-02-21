@@ -84,6 +84,8 @@ export default function FormView() {
         <Select name='wireless' placeholder='Escolher' />
         <label htmlFor='wired'>Com fios/cabos</label>
         <Select name='wired' placeholder='Escolher' />
+        <label htmlFor='quadrant'>Árvore do quadrante leste-norte</label>
+        <Select name='quadrant' placeholder='Escolher' />
         <label htmlFor='avatar'>Enviar imagem</label>
         {/* <input
           type='file'

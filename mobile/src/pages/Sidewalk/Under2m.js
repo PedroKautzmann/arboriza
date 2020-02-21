@@ -11,7 +11,7 @@ export default function Under2m() {
   return (
     <View style={main.container}>
       <Text style={styles.warning}>
-        Não plantar árvores! Fazer canteiro para cultivar os tipos abaixo
+        Não plante árvores! Faça canteiro para cultivar os tipos abaixo
       </Text>
 
       <View style={styles.listView}>

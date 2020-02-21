@@ -22,7 +22,7 @@ const Routes = createAppContainer(
       Info: {
         screen: Info,
         navigationOptions: {
-          title: 'Página Inicial'
+          title: 'Arboriza São Leo'
         }
       },
       About: {
