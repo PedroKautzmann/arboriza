@@ -21,7 +21,8 @@ const customStyles = {
     justifyContent: 'center',
     marginBottom: 10,
     border: '1px solid #eee',
-    padding: 0
+    padding: 0,
+    position: 'unset',
   }),
   option: (styles, { data, isDisabled, isFocused, isSelected }) => {
     return {
@@ -65,7 +66,7 @@ export default function Select({ name, ...rest }) {
         classNamePrefix='react-select'
         options={options}
         styles={customStyles}
-        {...rest}
+        {...rest} 
       />
 
       {error && (
