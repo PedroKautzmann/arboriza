@@ -22,6 +22,18 @@ Com npm
 npm install
 ```
 
+## Rodando as migrations
+
+```
+yarn sequelize db:migrate
+```
+
+ou
+
+```
+npx sequelize-cli db:migrate
+```
+
 ## Rodando o servidor
 
 ```
