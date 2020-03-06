@@ -99,29 +99,33 @@ class TreeController {
   }
 
   async store(req, res) {
-    // const schema = Yup.object().shape({
-    //   name: Yup.string().required(),
-    //   species: Yup.string().required(),
-    //   recommended: Yup.number(),
-    //   forbidden: Yup.number(),
-    //   wireless: Yup.number(),
-    //   wired: Yup.number(),
-    //   avatar_id: Yup.number(),
-    // });
+    const { avatar_id } = req.body;
+    const { name, species, recommended, forbidden, wireless, wired, quadrant } = req.body.data;
 
-    // if (!(await schema.isValid(req.body))) {
-    //   return res.status(401).json({ error: 'Validation fails' });
-    // }
 
-    const { data, avatar_id } = req.body;
+    const schema = Yup.object().shape({
+      name: Yup.string().required(),
+      species: Yup.string().required(),
+      recommended: Yup.boolean(),
+      forbidden: Yup.boolean(),
+      wireless: Yup.boolean(),
+      wired: Yup.boolean(),
+      quadrant: Yup.boolean(),
+    });
+
+    if (!(await schema.isValid(req.body.data))) {
+      return res.status(401).json({ error: 'Validation fails' });
+    }
+
 
     const tree = await Tree.create({
-      name: data.name,
-      species: data.species,
-      recommended: data.recommended,
-      forbidden: data.forbidden,
-      wireless: data.wireless,
-      wired: data.wired,
+      name,
+      species,
+      recommended,
+      forbidden,
+      wireless,
+      wired,
+      quadrant,
       avatar_id
     });
 

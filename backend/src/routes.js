@@ -16,7 +16,7 @@ routes.post('/users', UserController.store);
 
 routes.put('/users', UserController.update);
 
-routes.get('/trees/', TreeController.index);
+routes.get('/trees', TreeController.index);
 
 routes.post('/trees', TreeController.store);
 

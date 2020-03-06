@@ -10,6 +10,7 @@ class Tree extends Model {
         forbidden: Sequelize.BOOLEAN,
         wireless: Sequelize.BOOLEAN,
         wired: Sequelize.BOOLEAN,
+        quadrant: Sequelize.BOOLEAN
       },
       {
         sequelize

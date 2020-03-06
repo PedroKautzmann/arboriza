@@ -13,7 +13,7 @@ import { Container } from './styles';
 
 export default function FormView() {
   const formRef = useRef(null);
-  const fileInput = new FormData();
+  var fileInput = new FormData();
 
   async function handleSubmit(data, { reset }) {
     try {
@@ -48,6 +48,7 @@ export default function FormView() {
       toast.success('Árvore cadastrada!');
 
       reset();
+      fileInput = new FormData();
     } catch (err) {
       if (err instanceof Yup.ValidationError) {
         const errorMessages = {};
